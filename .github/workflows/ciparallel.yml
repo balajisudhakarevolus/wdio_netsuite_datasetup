@@ -1,0 +1,35 @@
+# .github/workflows/webdriverio.yml
+name: WebdriverIO Parallel Execution
+ 
+on:
+  push:
+    branches:
+      - Development
+      - githubAction_workflow
+ 
+jobs:
+  test:
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+ 
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16' # Specify the Node.js version you need
+ 
+    - name: Install dependencies
+      run: npm install
+ 
+    - name: Start Selenium server
+      run: |
+        npm install selenium-standalone@latest -g
+        selenium-standalone install
+        selenium-standalone start &
+      env:
+        DISPLAY: :99.0
+ 
+    - name: Run WebdriverIO tests
+      run: npx wdio run wdio.conf.js
