@@ -7,6 +7,6 @@ const memberLevel = netsuiteTestdata.silver;
 describe(`Netsuite_orderCancellation_retainLevel_${memberLevel}_${accountId}`, () => {
 
   it(`netsuite_orderCancellation_retainLevel_${memberLevel}_${accountId}`, async () => {
-    netsuitePage.orderCancellation(accountId);
+    await netsuitePage.orderCancellation(accountId);
   });
 });
