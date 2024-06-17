@@ -49,11 +49,22 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        maxInstances: 4,
-        browserName: 'chrome',
-        acceptInsecureCerts: true
-    }],
+    capabilities: [
+        {
+          maxInstances: 10,
+          acceptInsecureCerts: true,
+          browserName: "chrome",
+          "goog:chromeOptions": {
+            args: [
+              "--headless",
+              "--no-sandbox",
+              "--disable-gpu",
+              "--disable-dev-shm-usage",
+              "--window-size=1920,1080",
+            ],
+          },
+        },
+      ],
 
     services: ['selenium-standalone'],
 
