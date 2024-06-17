@@ -66,8 +66,6 @@ exports.config = {
         },
       ],
 
-    services: ['selenium-standalone'],
-
     //
     // ===================
     // Test Configurations
