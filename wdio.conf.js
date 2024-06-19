@@ -51,7 +51,7 @@ exports.config = {
     //
     capabilities: [
         {
-          maxInstances: 10,
+          maxInstances: 1,
           acceptInsecureCerts: true,
           browserName: "chrome",
           "goog:chromeOptions": {
@@ -60,7 +60,7 @@ exports.config = {
               "--no-sandbox",
               "--disable-gpu",
               "--disable-dev-shm-usage",
-              "--window-size=1920,1080",
+              "--window-size=1920,1080"
             ],
           },
         },

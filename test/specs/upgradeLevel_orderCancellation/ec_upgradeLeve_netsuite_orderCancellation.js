@@ -6,7 +6,7 @@ const accountId = netsuiteTestdata.upgrade_AccountId_ec;
 describe(`Netsuite_orderCancellation_upgradeLevel_ec_${accountId}`, () => {
 
   it(`netsuite_orderCancellation_upgradeLevel_ec_${accountId}`, async () => {
-    netsuitePage.orderCancellation(accountId);
+    await netsuitePage.orderCancellation(accountId);
   });
 
 
