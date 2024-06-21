@@ -1,11 +1,13 @@
-name: CI
+name: Netsuite Order Cancellation - Cron job
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 * * * *"
+  workflow_dispatch:
   push:
     branches:
       - Development
       - githubAction_workflow
+  
 jobs:
   build:
     runs-on: ubuntu-22.04
